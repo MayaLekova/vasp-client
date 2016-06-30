@@ -2,9 +2,10 @@
 
 const dgram = require('dgram');
 const TransportHeader = require('./protocol/transport_header.js');
+const consts = require('./protocol/constants.js');
 
 const message = new Buffer(32);
-let th = new TransportHeader(0b10010111, 1, 1, 1, 0b1001, 42);
+let th = new TransportHeader(consts.Prefix, 1, 1, consts.MediaChannel, consts.TransportFlags.startOfPacket | consts.TransportFlags.important, 42);
 th.writeTo(message);
 
 const client = dgram.createSocket('udp4');

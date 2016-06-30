@@ -1,6 +1,6 @@
 # vasp-client
 
-> My magnificent app
+> WebGL based client for VASP (Vector Animation Streaming Protocol)
 
 
 ## Dev
